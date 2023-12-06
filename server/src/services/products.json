@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Twister",
+        "description" : "Juego grupal, muy entretenido para pasar con amigos y familia. Desde 9 años.",
+        "price": 22990,
+        "image": "https://firebasestorage.googleapis.com/v0/b/app-web-e4bad.appspot.com/o/2000337633948_2.jpg?alt=media&token=09a01844-356a-40c4-a029-7f05c7169769"
+    },
+    {
+        "name": "Jenga",
+        "description" : "Entrenido juego de precisión mayores de 5 años",
+        "price": 12990,
+        "image":"https://firebasestorage.googleapis.com/v0/b/app-web-e4bad.appspot.com/o/Jenga.jpg?alt=media&token=ca3040f2-c560-407b-bf15-d2a3f1d63a59"
+    },
+    {
+        "name": "Adivina Quien",
+        "description": "Entretenido juego familiar desde 8 años.",
+        "price": 30990,
+        "image": "https://firebasestorage.googleapis.com/v0/b/app-web-e4bad.appspot.com/o/AdivinaQuien.jpg?alt=media&token=588fdfd0-2500-4edc-a587-0022b81b49de"
+    },
+    {
+        "name": "Casa de Muñecas",
+        "description": "Entretenido juego para niñas desde los 6 años.",
+        "price": 14990,
+        "image": "https://firebasestorage.googleapis.com/v0/b/app-web-e4bad.appspot.com/o/CasaMuneca.jpg?alt=media&token=1693f68a-bda6-4693-8d38-97da9bf83736"
+    },
+    {
+        "name": "Pony Fur Real",
+        "description": "Juguete para niños desde los 6 años",
+        "price": 19990,
+        "image": "https://firebasestorage.googleapis.com/v0/b/app-web-e4bad.appspot.com/o/FurReal.jpg?alt=media&token=d13bc911-8b40-42d9-9b87-bb4a2b17e0bb"
+    },
+    {
+        "name": "Gestos",
+        "description": "Juego familiar desde los 5 años.",
+        "price": 19990,
+        "image": "https://firebasestorage.googleapis.com/v0/b/app-web-e4bad.appspot.com/o/Gestos.jpg?alt=media&token=9b702e2e-d66e-49f7-9f39-c75019828327"
+    },
+    {
+        "name": "Masillas Magicas Play Doh",
+        "description": "Masillas masgicas Play Doh, desde los 8 años.",
+        "price": 15990,
+        "image": "https://firebasestorage.googleapis.com/v0/b/app-web-e4bad.appspot.com/o/MasillasMagicas.jpg?alt=media&token=c3974a15-ee4a-4002-9240-086289f68b33"
+    },
+    {
+        "name": "Monopoly Chile",
+        "description": "El mejor Monopoly ahora version Chile, desde los 12 años",
+        "price": 22990,
+        "image": "https://firebasestorage.googleapis.com/v0/b/app-web-e4bad.appspot.com/o/MonopolyChile.jpg?alt=media&token=8717074d-219b-403a-8ed2-05c0077baf9f"
+    }
+]
