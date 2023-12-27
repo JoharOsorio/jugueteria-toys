@@ -1,4 +1,69 @@
 
+const mercadopago = new MercadoPago('TEST-659d8c85-ec5f-4160-a79d-0a931540d031');
+
+// Handle call to backend and generate preference.
+document.getElementById("checkout-btn").addEventListener("click", function () {
+
+  $('#checkout-btn').attr("disabled", true);
+
+  const orderData = {
+    quantity: 1,
+    description: "Productos",
+    price: document.getElementById("cart-total").innerHTML
+  };
+
+  fetch("http://127.0.0.1:3001/create_preference", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(orderData),
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (preference) {
+      console.log(preference);
+      createCheckoutButton(preference.id);
+
+      $(".shopping-cart").fadeOut(500);
+      setTimeout(() => {
+        $(".container_payment").show(500).fadeIn();
+      }, 500);
+    })
+    .catch(function () {
+      alert("Unexpected error");
+      $('#checkout-btn').attr("disabled", false);
+    });
+});
+
+function createCheckoutButton(preferenceId) {
+  // Initialize the checkout
+  const bricksBuilder = mercadopago.bricks();
+
+  const renderComponent = async (bricksBuilder) => {
+    if (window.checkoutButton) window.checkoutButton.unmount();
+    await bricksBuilder.create(
+      'wallet',
+      'button-checkout', // class/id where the payment button will be displayed
+      {
+        initialization: {
+          preferenceId: preferenceId
+        },
+        callbacks: {
+          onError: (error) => console.error(error),
+          onReady: () => {
+            //ocultar el div de procesar pago
+            document.getElementById("process-payment").className = "d-none";
+            document.getElementById("process-payment").style.display = "none";
+          }
+        }
+      }
+    );
+  };
+  window.checkoutButton =  renderComponent(bricksBuilder);
+}
+
 const tbody = document.querySelector('#tbodyCarrito');
 let carrito = []
 //console.log(tbody);
@@ -62,7 +127,7 @@ function CarritoTotal(){
     Total = Total + precio*item.cantidad
   })
 
-  itemCartTotal.innerHTML = `Total $${Total}`
+  itemCartTotal.innerHTML = `${Total}`
   addLocalStorage()
 }
 
